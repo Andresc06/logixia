@@ -222,7 +222,7 @@ describe('createTypedLogger', () => {
   });
 
   it.each(['verbose', 'trace'] as const)(
-    '%s() falls back to debug when the base logger has no %s method',
+    '%s() falls back to debug when the base logger lacks it',
     async (level) => {
       const base = makeBase();
       const logger = createTypedLogger<OrderFields>(base, schema);
